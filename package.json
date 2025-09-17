@@ -9,9 +9,10 @@
     "server": "hexo server"
   },
   "hexo": {
-    "version": ""
+    "version": "7.3.0"
   },
   "dependencies": {
+    "gray-matter": "^4.0.3",
     "hexo": "^7.3.0",
     "hexo-generator-archive": "^2.0.0",
     "hexo-generator-category": "^2.0.0",
