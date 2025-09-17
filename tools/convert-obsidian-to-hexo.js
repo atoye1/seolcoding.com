@@ -185,17 +185,17 @@ function convertTemplateDate(content) {
 }
 
 /**
- * Converts string to URL-friendly slug
+ * Converts string to URL-friendly slug (Korean-friendly)
  * @param {string} text - The input text
  * @returns {string} - URL-friendly slug
  */
 function slugify(text) {
   return text
-    .toLowerCase()
     .trim()
-    .replace(/[^\w\s-]/g, '') // Remove special characters
-    .replace(/[\s_-]+/g, '-') // Replace spaces and underscores with hyphens
-    .replace(/^-+|-+$/g, ''); // Remove leading/trailing hyphens
+    .replace(/[\s_]+/g, '-') // Replace spaces and underscores with hyphens
+    .replace(/[<>:"/\\|?*]/g, '') // Remove file system unsafe characters
+    .replace(/^-+|-+$/g, '') // Remove leading/trailing hyphens
+    .replace(/--+/g, '-'); // Replace multiple hyphens with single hyphen
 }
 
 /**

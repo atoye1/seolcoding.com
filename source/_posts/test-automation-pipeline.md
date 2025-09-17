@@ -23,11 +23,11 @@ comments: true
 ## 테스트 항목
 
 ### 1. WikiLinks 변환 테스트
-[GitHub Actions](../github-actions/)는 정말 강력한 CI/CD 도구입니다.
-[옵시디언](../obsidian/)에서 작성한 이 글이 [Hexo](../hexo/)로 변환될까요?
+[GitHub Actions](../GitHub-Actions/)는 정말 강력한 CI/CD 도구입니다.
+[옵시디언](../Obsidian/)에서 작성한 이 글이 [Hexo](../Hexo/)로 변환될까요?
 
 ### 2. 이미지 테스트
-![test-image.png](../test-imagepng/)
+![test-image.png](../test-image.png/)
 
 ### 3. 해시태그 테스트
 #automation #testing #obsidian #hexo

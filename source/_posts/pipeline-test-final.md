@@ -37,15 +37,15 @@ node scripts/convert-obsidian-to-hexo.js --input temp-posts --output source/_pos
 ```
 
 ### 3. WikiLinks 변환 테스트
-- [GitHub Actions](../github-actions/) 워크플로우
-- [옵시디언](../obsidian/) 마크다운
-- [Hexo](../hexo/) 정적 사이트 생성기
+- [GitHub Actions](../GitHub-Actions/) 워크플로우
+- [옵시디언](../Obsidian/) 마크다운
+- [Hexo](../Hexo/) 정적 사이트 생성기
 
 ### 4. 해시태그 자동 변환
 #automation #pipeline #hexo #obsidian #github-actions
 
 ### 5. 이미지 처리 테스트
-![architecture-diagram.png](../architecture-diagrampng/)
+![architecture-diagram.png](../architecture-diagram.png/)
 
 ## 예상 결과
 
@@ -56,7 +56,7 @@ node scripts/convert-obsidian-to-hexo.js --input temp-posts --output source/_pos
 
 ---
 
-**타임스탬프**: 2025-09-17 17:03:00
+**타임스탬프**: 2025-09-17 08:40:30
 **테스트 상태**: 🔄 진행중...
 
 이 포스트가 성공적으로 배포되면 전체 자동화 시스템이 완성된 것입니다! 🎉
