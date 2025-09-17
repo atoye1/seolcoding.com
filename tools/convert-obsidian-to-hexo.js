@@ -166,6 +166,25 @@ function formatDate(date) {
 }
 
 /**
+ * Converts template date syntax to static timestamp
+ * @param {string} content - The markdown content
+ * @returns {string} - Content with converted template dates
+ */
+function convertTemplateDate(content) {
+  const now = new Date();
+  const timestamp = now.toISOString().slice(0, 19).replace('T', ' ');
+
+  // Convert {{ date | date('YYYY-MM-DD HH:mm:ss') }} to static timestamp
+  content = content.replace(/\{\{\s*date\s*\|\s*date\(['"][^'"]*['"]\)\s*\}\}/g, timestamp);
+
+  // Convert other common date template patterns
+  content = content.replace(/\{\{\s*date\s*\|\s*date\s*\}\}/g, timestamp);
+  content = content.replace(/\{\{\s*now\s*\|\s*date\(['"][^'"]*['"]\)\s*\}\}/g, timestamp);
+
+  return content;
+}
+
+/**
  * Converts string to URL-friendly slug
  * @param {string} text - The input text
  * @returns {string} - URL-friendly slug
@@ -199,6 +218,7 @@ function processMarkdownFile(filePath, outputPath) {
     processedContent = convertWikiLinks(processedContent);
     processedContent = convertImageLinks(processedContent);
     processedContent = convertAttachmentLinks(processedContent);
+    processedContent = convertTemplateDate(processedContent);
 
     // Extract hashtags and add to front matter
     const tagResult = extractHashtags(processedContent, frontMatter);
