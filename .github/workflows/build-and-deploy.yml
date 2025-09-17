@@ -28,7 +28,7 @@ jobs:
       run: |
         if [ -d "temp-posts" ] && [ "$(ls -A temp-posts 2>/dev/null)" ]; then
           echo "Converting Obsidian posts to Hexo format..."
-          node scripts/convert-obsidian-to-hexo.js --input temp-posts --output source/_posts
+          node tools/convert-obsidian-to-hexo.js --input temp-posts --output source/_posts
           rm -rf temp-posts
         else
           echo "No new posts to convert"

@@ -1,8 +1,20 @@
 ---
 title: 최종 파이프라인 테스트
-date: 2025-09-17
-tags: [파이프라인, 테스트, 최종검증]
-categories: [Testing, Final]
+date: 2025-09-17T00:00:00.000Z
+tags:
+  - 파이프라인
+  - 테스트
+  - 최종검증
+  - automation
+  - pipeline
+  - hexo
+  - obsidian
+  - github
+categories:
+  - Testing
+  - Final
+layout: post
+comments: true
 ---
 
 # 🚀 최종 파이프라인 테스트
@@ -25,15 +37,15 @@ node scripts/convert-obsidian-to-hexo.js --input temp-posts --output source/_pos
 ```
 
 ### 3. WikiLinks 변환 테스트
-- [[GitHub Actions]] 워크플로우
-- [[Obsidian|옵시디언]] 마크다운
-- [[Hexo]] 정적 사이트 생성기
+- [GitHub Actions](../github-actions/) 워크플로우
+- [옵시디언](../obsidian/) 마크다운
+- [Hexo](../hexo/) 정적 사이트 생성기
 
 ### 4. 해시태그 자동 변환
 #automation #pipeline #hexo #obsidian #github-actions
 
 ### 5. 이미지 처리 테스트
-![[architecture-diagram.png]]
+![architecture-diagram.png](../architecture-diagrampng/)
 
 ## 예상 결과
 
