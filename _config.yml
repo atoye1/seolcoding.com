@@ -9,7 +9,7 @@ description: 'Software Engineering & Development Blog'
 keywords: programming, development, tech, coding
 author: Donghun Seol
 language: ko
-timezone: ''
+timezone: 'Asia/Seoul'
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
@@ -29,8 +29,6 @@ category_dir: categories
 code_dir: downloads/code
 i18n_dir: :lang
 skip_render:
-ignore:
-  - temp-posts/**
 
 # Writing
 new_post_name: :title.md # File name of new posts
@@ -94,6 +92,7 @@ pagination_dir: page
 include:
 exclude:
 ignore:
+  - temp-posts/**
 
 # Extensions
 ## Plugins: https://hexo.io/plugins/
