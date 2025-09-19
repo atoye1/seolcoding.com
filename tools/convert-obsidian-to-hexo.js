@@ -81,20 +81,20 @@ function convertImageLinks(content) {
  * @returns {string} - Converted content
  */
 function convertYouTubeLinks(content) {
-  // Convert YouTube image syntax: ![](https://www.youtube.com/watch?v=VIDEO_ID) → {% embed youtube VIDEO_ID %}
+  // Convert YouTube image syntax: ![](https://www.youtube.com/watch?v=VIDEO_ID) → {% youtube VIDEO_ID %}
   content = content.replace(/!\[\]\((https?:\/\/(?:www\.)?youtube\.com\/watch\?v=([a-zA-Z0-9_-]+))\)/g, (match, fullUrl, videoId) => {
-    return `{% embed youtube ${videoId} %}`;
+    return `{% youtube ${videoId} %}`;
   });
 
-  // Convert YouTube image syntax: ![](https://youtu.be/VIDEO_ID) → {% embed youtube VIDEO_ID %}
+  // Convert YouTube image syntax: ![](https://youtu.be/VIDEO_ID) → {% youtube VIDEO_ID %}
   content = content.replace(/!\[\]\((https?:\/\/youtu\.be\/([a-zA-Z0-9_-]+))\)/g, (match, fullUrl, videoId) => {
-    return `{% embed youtube ${videoId} %}`;
+    return `{% youtube ${videoId} %}`;
   });
 
-  // Convert standard YouTube links: [text](https://www.youtube.com/watch?v=VIDEO_ID) → {% embed youtube VIDEO_ID %}
+  // Convert standard YouTube links: [text](https://www.youtube.com/watch?v=VIDEO_ID) → {% youtube VIDEO_ID %}
   // Only if the link text suggests it's meant to be embedded (contains keywords)
   content = content.replace(/\[([^\]]*(?:동영상|비디오|영상|video|watch)[^\]]*)\]\((https?:\/\/(?:www\.)?youtube\.com\/watch\?v=([a-zA-Z0-9_-]+))\)/gi, (match, linkText, fullUrl, videoId) => {
-    return `{% embed youtube ${videoId} %}`;
+    return `{% youtube ${videoId} %}`;
   });
 
   return content;
