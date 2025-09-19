@@ -1,0 +1,63 @@
+// Custom styles for category widget in sidebar
+
+.categories-widget {
+  margin-top: 20px;
+  padding: 15px;
+  background: var(--content-bg-color);
+  border-radius: 8px;
+
+  .widget-title {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: var(--text-color);
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 8px;
+  }
+
+  .widget-content {
+    .category-item {
+      margin-bottom: 8px;
+
+      .category-link {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: var(--text-color);
+        text-decoration: none;
+        padding: 8px 12px;
+        border-radius: 4px;
+        transition: all 0.3s ease;
+
+        &:hover {
+          background: var(--primary-color);
+          color: white;
+          transform: translateX(5px);
+        }
+
+        .category-count {
+          font-size: 12px;
+          opacity: 0.7;
+          background: var(--primary-color);
+          color: white;
+          padding: 2px 6px;
+          border-radius: 10px;
+          min-width: 20px;
+          text-align: center;
+        }
+      }
+    }
+  }
+}
+
+// Dark mode support
+@media (prefers-color-scheme: dark) {
+  .categories-widget {
+    .category-item .category-link {
+      &:hover .category-count {
+        background: white;
+        color: var(--primary-color);
+      }
+    }
+  }
+}

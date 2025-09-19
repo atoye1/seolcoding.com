@@ -1,0 +1,17 @@
+{# Custom sidebar content for categories #}
+
+{%- if site.categories.length > 0 %}
+<div class="categories-widget">
+  <h3 class="widget-title">카테고리</h3>
+  <div class="widget-content">
+    {%- for cat in site.categories.sort('name') %}
+    <div class="category-item">
+      <a href="{{ url_for(cat.path) }}" class="category-link">
+        {{ cat.name }}
+        <span class="category-count">({{ cat.posts.length }})</span>
+      </a>
+    </div>
+    {%- endfor %}
+  </div>
+</div>
+{%- endif %}

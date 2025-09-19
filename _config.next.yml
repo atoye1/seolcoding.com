@@ -21,7 +21,7 @@ minify: false
 custom_file_path:
   #head: source/_data/head.njk
   #header: source/_data/header.njk
-  #sidebar: source/_data/sidebar.njk
+  sidebar: source/_data/sidebar.njk
   #postMeta: source/_data/post-meta.njk
   #postBodyStart: source/_data/post-body-start.njk
   #postBodyEnd: source/_data/post-body-end.njk
@@ -29,7 +29,7 @@ custom_file_path:
   #bodyEnd: source/_data/body-end.njk
   #variable: source/_data/variables.styl
   #mixin: source/_data/mixins.styl
-  #style: source/_data/styles.styl
+  style: source/_data/styles.styl
 
 
 # ---------------------------------------------------------------
@@ -37,10 +37,10 @@ custom_file_path:
 # ---------------------------------------------------------------
 
 # Schemes
-scheme: Muse
+#scheme: Muse
 #scheme: Mist
 #scheme: Pisces
-#scheme: Gemini
+scheme: Gemini
 
 # Dark Mode
 darkmode: false
@@ -128,12 +128,12 @@ sidebar:
 
   # Sidebar display.
   # Applicable to Muse | Mist and mobile of Pisces | Gemini.
-  Available values:
+  # Available values:
   #  - post    expand on posts automatically. Default.
-   - always  expand for all pages automatically.
+  #  - always  expand for all pages automatically.
   #  - hide    expand only when click on the sidebar toggle icon.
   #  - remove  totally remove sidebar including sidebar toggle.
-  display: post
+  display: always
 
   # Sidebar padding in pixels.
   padding: 18
@@ -235,9 +235,7 @@ footer:
     gongan_icon_url:
 
 
-# ---------------------------------------------------------------
-# Post Settings
-# See: https://theme-next.js.org/docs/theme-settings/posts
+# ------------------------------------------------------------
 # ---------------------------------------------------------------
 
 # Use `description` in front-matter to specify post excerpt.
@@ -296,7 +294,7 @@ related_posts:
 # Post edit
 # Easily browse and edit blog source code online.
 post_edit:
-  enable: true
+  enable: false
   url: https://github.com/user-name/repo-name/tree/branch-name/subdirectory-name/ # Link for view source
   #url: https://github.com/user-name/repo-name/edit/branch-name/subdirectory-name/ # Link for fork & edit
 
@@ -858,7 +856,7 @@ local_search:
 # A button to open designated chat widget in sidebar.
 # Firstly, you need to enable and configure the chat service.
 chat:
-  enable: false
+  enable: true
   icon: fa fa-comment # Icon name in Font Awesome, set to `false` to disable icon.
 
 # Chatra is a functional, easy to use piece of chat software for websites.
