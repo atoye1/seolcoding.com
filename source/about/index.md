@@ -11,24 +11,29 @@ layout: "page"
 
 ## 👨‍💻 경력
 
-### Software Engineer @ TechCorp (2022 - 현재)
+### ㅇㅇ공사 (2016 - 재직)
+
 - 풀스택 웹 개발 및 마이크로서비스 아키텍처 설계
-- React, Node.js, TypeScript를 활용한 대규모 서비스 개발
-- AWS 클라우드 인프라 구축 및 운영
+- React, Node.js, TypeScript를 사활용한 대규모 서비스 개발
+- AWS 클라우드 인프라 구축 및 운영중
 
 ### Junior Developer @ StartupXYZ (2020 - 2022)
+
 - 모바일 앱 백엔드 API 개발
 - Python Django 프레임워크 기반 웹 서비스 개발
 - 데이터베이스 최적화 및 성능 튜닝
 
 ### Software Engineering Intern @ BigTech (2019)
+
 - 머신러닝 모델 개발 및 데이터 파이프라인 구축
 - Python, TensorFlow를 활용한 추천 시스템 개발
 
 ## 🎓 학력
 
 ### 컴퓨터공학과 학사 (2016 - 2020)
+
 **한국대학교**
+
 - 전공: 컴퓨터공학
 - 졸업논문: "딥러닝을 활용한 자연어 처리 시스템 개발"
 - 성적: 3.8/4.5 (Magna Cum Laude)
@@ -36,35 +41,42 @@ layout: "page"
 ## 🏆 수상 경력
 
 ### 2023
+
 - **우수 개발자상** - TechCorp 연말 시상식
 - **오픈소스 기여상** - 한국 개발자 컨퍼런스
 
 ### 2022
+
 - **해커톤 1위** - Seoul Startup Weekend
 - **프로젝트 창의상** - 회사 내부 혁신 프로그램
 
 ### 2019
+
 - **코딩 테스트 대회 3위** - 전국 대학생 프로그래밍 경진대회
 - **캡스톤 프로젝트 우수상** - 대학교 컴퓨터공학과
 
 ## 🛠️ 기술 스택
 
 ### Frontend
+
 - **Languages**: JavaScript, TypeScript, HTML5, CSS3
 - **Frameworks**: React, Vue.js, Next.js
 - **Styling**: Styled-components, Tailwind CSS, SASS
 
 ### Backend
+
 - **Languages**: Python, Node.js, Java, Go
 - **Frameworks**: Django, Express.js, Spring Boot
 - **Databases**: PostgreSQL, MySQL, MongoDB, Redis
 
 ### DevOps & Cloud
+
 - **Cloud**: AWS (EC2, S3, RDS, Lambda), Azure
 - **CI/CD**: GitHub Actions, Jenkins, Docker
 - **Monitoring**: Prometheus, Grafana, ELK Stack
 
 ### Tools & Others
+
 - **Version Control**: Git, GitHub, GitLab
 - **Development**: VS Code, IntelliJ IDEA, Postman
 - **Design**: Figma, Adobe XD
@@ -93,7 +105,7 @@ layout: "page"
 
 ## 📞 연락처
 
-- **Email**: ssalssi1@gmail.com
+- **Email**: <ssalssi1@gmail.com>
 - **GitHub**: [github.com/atoye1](https://github.com/atoye1)
 - **LinkedIn**: [linkedin.com/in/seolcoding](https://linkedin.com/in/seolcoding)
 
