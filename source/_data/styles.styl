@@ -50,6 +50,30 @@
   }
 }
 
+// YouTube video size control - 절반 크기로 조정
+.video-container {
+  position: relative;
+  width: 50%; // 현재 크기의 절반
+  margin: 20px auto; // 중앙 정렬
+
+  iframe {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9; // 16:9 비율 유지
+    border-radius: 8px;
+  }
+
+  // 모바일에서는 좀 더 크게
+  @media (max-width: 768px) {
+    width: 80%;
+  }
+
+  // 아주 작은 화면에서는 전체 크기
+  @media (max-width: 480px) {
+    width: 100%;
+  }
+}
+
 // Dark mode support
 @media (prefers-color-scheme: dark) {
   .categories-widget {
