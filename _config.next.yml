@@ -143,7 +143,7 @@ sidebar:
 # Sidebar Avatar
 avatar:
   # Replace the default image and set the url here.
-  url: https://raw.githubusercontent.com/atoye1/seolcoding.com/refs/heads/images/Generated%20Image%20September%2020%2C%202025%20-%205_31PM.png
+  url: https://raw.githubusercontent.com/atoye1/seolcoding.com/images/2025-09-20-20250920-6.png
   # If true, the avatar will be displayed in circle.
   rounded: true
   # If true, the avatar will be rotated with the cursor.
