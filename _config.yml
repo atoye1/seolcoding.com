@@ -120,9 +120,10 @@ likely:
     css: //cdn.jsdelivr.net/npm/ilyabirman-likely@2/release/likely.min.css
   look: light # available values: normal, light, small, big
   networks:
-    twitter: Tweet
-    facebook: Share
-    linkedin: Link
+    twitter:
+    facebook:
+    linkedin:
+    gplus:
 
 filter_optimize:
   enable: true
