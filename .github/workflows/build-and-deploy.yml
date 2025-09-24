@@ -39,19 +39,29 @@ jobs:
         npm run clean
         npm run build
 
+    - name: Build Next.js portfolio
+      run: |
+        cd portfolio
+        npm ci
+        npm run build
+
     - name: Prepare deployment directory
       run: |
         # 임시 디렉토리 생성
         mkdir -p deploy_temp
 
-        # 1. 포트폴리오를 루트에 복사
-        cp -r portfolio/* deploy_temp/
+        # 1. Next.js 빌드 결과를 루트에 복사
+        cp -r portfolio/out/* deploy_temp/
 
         # 2. Hexo 빌드 결과를 /blog에 복사
         mkdir -p deploy_temp/blog
         cp -r public/* deploy_temp/blog/
 
-        # 3. CNAME 파일 생성
+        # 3. deprecated 디렉토리 복사
+        mkdir -p deploy_temp/deprecated
+        cp -r deprecated/* deploy_temp/deprecated/
+
+        # 4. CNAME 파일 생성
         echo "seolcoding.com" > deploy_temp/CNAME
 
     - name: Deploy to GitHub Pages
