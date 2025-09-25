@@ -1,4 +1,4 @@
-baseURL = "https://felipecordero.com"
+baseURL = "https://seolcoding.com"
 languageCode = "en-us"
 title = "Felipe Cordero"
 theme = "careercanvas"
@@ -57,7 +57,7 @@ defaultContentLanguageInSubdir = false
 
 [params]
 name = "Felipe Cordero"
-email = "mail@felipecordero.com"
+email = "mail@seolcoding.com"
 profile_image = "/images/felipe-cordero-profile.jpg"
 author = "Felipe Cordero"
 
@@ -67,8 +67,8 @@ description = "Structural engineer and software developer expanding into AI/ML t
 
 linkedin_url = "https://www.linkedin.com/in/felipe-cordero-osorio"
 linkedin_text = "linkedin.com/in/felipe-cordero-osorio"
-github_url = "https://github.com/felipecordero"
-github_text = "github.com/felipecordero"
+github_url = "https://github.com/atoye1"
+github_text = "github.com/atoye1"
 
 copyright = "© 2025 | Felipe Cordero"
 
@@ -86,7 +86,7 @@ url = "https://www.linkedin.com/in/felipe-cordero-osorio/"
 
 [[params.social]]
 icon = "github"
-url = "https://github.com/felipecordero"
+url = "https://github.com/atoye1"
 
 sectionPagesMenu = 'main'
 
