@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Getting Started on 설코딩 - AI 기술로 당신의 문제를 해결합니다</title><link>https://seolcoding.com/categories/getting-started/</link><description>Recent content in Getting Started on 설코딩 - AI 기술로 당신의 문제를 해결합니다</description><generator>Hugo</generator><language>ko</language><lastBuildDate>Wed, 17 Sep 2025 16:09:00 +0000</lastBuildDate><atom:link href="https://seolcoding.com/categories/getting-started/index.xml" rel="self" type="application/rss+xml"/><item><title>Hello World</title><link>https://seolcoding.com/blog/hello-world/</link><pubDate>Wed, 17 Sep 2025 16:09:00 +0000</pubDate><guid>https://seolcoding.com/blog/hello-world/</guid><description>&lt;p&gt;draft: false
+type: &amp;ldquo;blog&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;Welcome to &lt;a href="https://hexo.io/"&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href="https://hexo.io/docs/"&gt;documentation&lt;/a&gt; for more info. If you get any problems when using Hexo, you can find the answer in &lt;a href="https://hexo.io/docs/troubleshooting.html"&gt;troubleshooting&lt;/a&gt; or you can ask me on &lt;a href="https://github.com/hexojs/hexo/issues"&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
+&lt;!-- more --&gt;
+&lt;h2 id="quick-start"&gt;Quick Start&lt;/h2&gt;
+&lt;h3 id="create-a-new-post"&gt;Create a new post&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;"&gt;&lt;tr&gt;&lt;td style="vertical-align:top;padding:0;margin:0;border:0;"&gt;
+&lt;pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code&gt;&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%"&gt;
+&lt;pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;$ hexo new &lt;span style="color:#0a3069"&gt;&amp;#34;My New Post&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;More info: &lt;a href="https://hexo.io/docs/writing.html"&gt;Writing&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id="run-server"&gt;Run server&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;"&gt;&lt;tr&gt;&lt;td style="vertical-align:top;padding:0;margin:0;border:0;"&gt;
+&lt;pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code&gt;&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%"&gt;
+&lt;pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;$ hexo server
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;More info: &lt;a href="https://hexo.io/docs/server.html"&gt;Server&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id="generate-static-files"&gt;Generate static files&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;"&gt;&lt;tr&gt;&lt;td style="vertical-align:top;padding:0;margin:0;border:0;"&gt;
+&lt;pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code&gt;&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%"&gt;
+&lt;pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;$ hexo generate
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;More info: &lt;a href="https://hexo.io/docs/generating.html"&gt;Generating&lt;/a&gt;&lt;/p&gt;</description></item></channel></rss>

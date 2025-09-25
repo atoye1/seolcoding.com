@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>자동화 on 설코딩 - AI 기술로 당신의 문제를 해결합니다</title><link>https://seolcoding.com/tags/%EC%9E%90%EB%8F%99%ED%99%94/</link><description>Recent content in 자동화 on 설코딩 - AI 기술로 당신의 문제를 해결합니다</description><generator>Hugo</generator><language>ko</language><lastBuildDate>Wed, 17 Sep 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://seolcoding.com/tags/%EC%9E%90%EB%8F%99%ED%99%94/index.xml" rel="self" type="application/rss+xml"/><item><title>자동화 파이프라인 테스트 포스트</title><link>https://seolcoding.com/blog/test-automation-pipeline/</link><pubDate>Wed, 17 Sep 2025 00:00:00 +0000</pubDate><guid>https://seolcoding.com/blog/test-automation-pipeline/</guid><description>&lt;p&gt;draft: false
+type: &amp;ldquo;blog&amp;rdquo;&lt;/p&gt;
+&lt;h1 id="자동화-파이프라인-테스트"&gt;자동화 파이프라인 테스트&lt;/h1&gt;
+&lt;p&gt;이것은 &lt;strong&gt;Obsidian to Hexo&lt;/strong&gt; 자동화 시스템을 테스트하기 위한 포스트입니다.&lt;/p&gt;
+&lt;h2 id="테스트-항목"&gt;테스트 항목&lt;/h2&gt;
+&lt;h3 id="1-wikilinks-변환-테스트"&gt;1. WikiLinks 변환 테스트&lt;/h3&gt;
+&lt;p&gt;&lt;a href="../GitHub-Actions/"&gt;GitHub Actions&lt;/a&gt;는 정말 강력한 CI/CD 도구입니다.
+&lt;a href="../Obsidian/"&gt;옵시디언&lt;/a&gt;에서 작성한 이 글이 &lt;a href="../Hexo/"&gt;Hexo&lt;/a&gt;로 변환될까요?&lt;/p&gt;</description></item></channel></rss>
