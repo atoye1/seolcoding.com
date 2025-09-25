@@ -1,5 +1,7 @@
 'use client'
 
+import Image from 'next/image'
+
 export default function Contact() {
   const handleCopyClick = (e: React.MouseEvent, url: string) => {
     e.preventDefault();
@@ -46,9 +48,11 @@ export default function Contact() {
 
               {/* Google Form QR Code */}
               <div className="bg-white/20 rounded-lg p-3 mb-4 mx-auto w-36 h-36 sm:w-44 sm:h-44 flex items-center justify-center overflow-hidden">
-                <img
+                <Image
                   src="/google_form_qr.png"
                   alt="구글 폼 QR 코드"
+                  width={176}
+                  height={176}
                   className="w-full h-full object-cover rounded"
                 />
               </div>
@@ -86,9 +90,11 @@ export default function Contact() {
 
               {/* KakaoTalk QR Code */}
               <div className="bg-white rounded-lg p-3 mb-4 mx-auto w-36 h-36 sm:w-44 sm:h-44 flex items-center justify-center overflow-hidden">
-                <img
+                <Image
                   src="/kakaotalk_qr.png"
                   alt="카카오톡 오픈채팅 QR 코드"
+                  width={176}
+                  height={176}
                   className="w-full h-full object-cover rounded"
                 />
               </div>
