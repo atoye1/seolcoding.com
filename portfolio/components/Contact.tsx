@@ -1,6 +1,13 @@
 'use client'
 
 export default function Contact() {
+  const handleCopyClick = (e: React.MouseEvent, url: string) => {
+    e.preventDefault();
+    e.stopPropagation();
+    navigator.clipboard.writeText(url);
+    alert('링크가 복사되었습니다!');
+  };
+
   return (
     <section id="contact" className="py-20 bg-gradient-to-br from-navy-900 via-primary-800 to-navy-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -11,95 +18,103 @@ export default function Contact() {
           </h2>
           <p className="text-lg text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed">
             강의, 프로젝트, 멘토링 등 어떤 형태의 협업이든 환영합니다.<br />
-            아래 버튼을 눌러 편하게 문의 내용을 남겨주세요
+            아래 버튼을 눌러 편한 방식으로 연락주세요
           </p>
 
           {/* Contact Options */}
-          <div className="grid md:grid-cols-3 gap-8 mb-16">
-            {/* Email */}
-            <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 hover:bg-white/20 transition-all duration-300">
-              <div className="text-primary-300 mb-4">
-                <svg className="w-8 h-8 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                </svg>
-              </div>
-              <h3 className="text-xl font-semibold text-white mb-2">이메일</h3>
-              <p className="text-gray-300 mb-4">빠른 답변을 원하시면</p>
-              <a
-                href="mailto:ssalssi1@gmail.com"
-                className="text-primary-300 hover:text-primary-200 font-medium transition-colors"
+          <div className="grid md:grid-cols-2 gap-12 mb-16 max-w-4xl mx-auto">
+            {/* Form Contact */}
+            <div className="bg-white/10 backdrop-blur-sm rounded-xl p-8 hover:bg-white/20 transition-all duration-300 relative">
+              {/* Copy Icon - Top Right */}
+              <div
+                className="absolute top-3 right-3 opacity-60 hover:opacity-100 transition-opacity cursor-pointer p-2 rounded-full hover:bg-white/10"
+                onClick={(e) => handleCopyClick(e, 'https://forms.gle/YOUR_FORM_ID')}
+                title="링크 복사"
               >
-                ssalssi1@gmail.com
+                <i className="fas fa-copy text-white/70 text-xl"></i>
+              </div>
+
+              <div className="text-center mb-6">
+                <div className="text-primary-300 mb-4">
+                  <svg className="w-10 h-10 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                  </svg>
+                </div>
+                <h3 className="text-2xl font-bold text-white mb-3">문의양식 작성하기</h3>
+                <p className="text-gray-300 mb-6">상세한 문의 내용을 📝 구글 폼으로 전달해주세요</p>
+              </div>
+
+              {/* Google Form QR Code */}
+              <div className="bg-white/20 rounded-lg p-3 mb-4 mx-auto w-36 h-36 sm:w-44 sm:h-44 flex items-center justify-center overflow-hidden">
+                <img
+                  src="/google_form_qr.png"
+                  alt="구글 폼 QR 코드"
+                  className="w-full h-full object-cover rounded"
+                />
+              </div>
+
+              <a
+                href="https://forms.gle/YOUR_FORM_ID"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block w-full bg-white/20 text-white px-6 py-3 rounded-lg font-medium hover:bg-white/30 transition-all duration-300 text-center"
+              >
+                구글 폼 작성하기
               </a>
             </div>
 
-            {/* Phone */}
-            <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 hover:bg-white/20 transition-all duration-300">
-              <div className="text-primary-300 mb-4">
-                <svg className="w-8 h-8 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
-                </svg>
+            {/* KakaoTalk Contact */}
+            <div className="bg-white/10 backdrop-blur-sm rounded-xl p-8 hover:bg-white/20 transition-all duration-300 relative">
+              {/* Copy Icon - Top Right */}
+              <div
+                className="absolute top-3 right-3 opacity-60 hover:opacity-100 transition-opacity cursor-pointer p-2 rounded-full hover:bg-white/10"
+                onClick={(e) => handleCopyClick(e, 'https://open.kakao.com/o/YOUR_CHAT_ID')}
+                title="링크 복사"
+              >
+                <i className="fas fa-copy text-white/70 text-xl"></i>
               </div>
-              <h3 className="text-xl font-semibold text-white mb-2">카카오톡</h3>
-              <p className="text-gray-300 mb-4">편하게 대화하고 싶다면</p>
-              <button className="text-primary-300 hover:text-primary-200 font-medium transition-colors">
-                카카오톡 문의
-              </button>
-            </div>
 
-            {/* Schedule */}
-            <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 hover:bg-white/20 transition-all duration-300">
-              <div className="text-primary-300 mb-4">
-                <svg className="w-8 h-8 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                </svg>
+              <div className="text-center mb-6">
+                <div className="text-yellow-300 mb-4">
+                  <svg className="w-10 h-10 mx-auto" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 3c5.8 0 10.5 3.7 10.5 8.3 0 4.6-4.7 8.3-10.5 8.3-.6 0-1.2 0-1.8-.1-1.1.7-3.5 2.4-5.6 3.1-.3.1-.6-.1-.6-.4 0-.2 0-.4.1-.5.2-.7.8-2.9.9-3.4C2.3 16.5 1.5 14.5 1.5 11.3 1.5 6.7 6.2 3 12 3z"/>
+                  </svg>
+                </div>
+                <h3 className="text-2xl font-bold text-white mb-3">가볍게 대화 나누기</h3>
+                <p className="text-gray-300 mb-6">카카오톡으로 ☕ 가벼운 대화도 환영입니다.</p>
               </div>
-              <h3 className="text-xl font-semibold text-white mb-2">일정 예약</h3>
-              <p className="text-gray-300 mb-4">직접 상담을 받고 싶다면</p>
-              <button className="text-primary-300 hover:text-primary-200 font-medium transition-colors">
-                상담 일정 예약
-              </button>
+
+              {/* KakaoTalk QR Code */}
+              <div className="bg-white rounded-lg p-3 mb-4 mx-auto w-36 h-36 sm:w-44 sm:h-44 flex items-center justify-center overflow-hidden">
+                <img
+                  src="/kakaotalk_qr.png"
+                  alt="카카오톡 오픈채팅 QR 코드"
+                  className="w-full h-full object-cover rounded"
+                />
+              </div>
+
+              <a
+                href="https://open.kakao.com/o/YOUR_CHAT_ID"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block w-full bg-yellow-500 text-black px-6 py-3 rounded-lg font-medium hover:bg-yellow-400 transition-all duration-300 text-center"
+              >
+                카카오톡으로 연락하기
+              </a>
             </div>
           </div>
 
-          {/* Main CTA */}
+          {/* Email CTA */}
           <div className="max-w-md mx-auto">
-            <button className="w-full bg-primary-600 text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-primary-700 transition-all duration-300 transform hover:-translate-y-1 shadow-lg hover:shadow-xl">
-              문의 양식 작성하기
-            </button>
-          </div>
-
-          {/* Quick Info */}
-          <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
-            <div className="text-gray-300">
-              <div className="font-semibold text-white mb-1">응답 시간</div>
-              <div>보통 24시간 이내</div>
-            </div>
-            <div className="text-gray-300">
-              <div className="font-semibold text-white mb-1">상담 방식</div>
-              <div>온라인/오프라인 모두 가능</div>
-            </div>
-            <div className="text-gray-300">
-              <div className="font-semibold text-white mb-1">비용</div>
-              <div>초기 상담 무료</div>
-            </div>
-          </div>
-
-          {/* Blog Link */}
-          <div className="mt-16 pt-8 border-t border-gray-600">
-            <p className="text-gray-300 mb-4">
-              더 많은 개발 이야기와 인사이트가 궁금하다면
-            </p>
             <a
-              href="/blog/"
-              className="inline-flex items-center text-primary-300 hover:text-primary-200 font-medium transition-colors"
+              href="mailto:ssalssi1@gmail.com"
+              className="block w-full bg-primary-600 text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-primary-700 transition-all duration-300 transform hover:-translate-y-1 shadow-lg hover:shadow-xl text-center"
             >
-              기술 블로그 보러가기
-              <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
+              <div>이메일 보내기 💌</div>
+              <div className="text-sm font-normal opacity-90">(ssalssi1@gmail.com)</div>
             </a>
           </div>
+
         </div>
       </div>
     </section>
