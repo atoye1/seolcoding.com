@@ -1,0 +1,118 @@
+baseURL = "https://felipecordero.com"
+languageCode = "en-us"
+title = "Felipe Cordero"
+theme = "careercanvas"
+defaultContentLanguage = "en"
+defaultContentLanguageInSubdir = false
+
+[languages]
+  [languages.en]
+    contentDir = "content/en"
+    languageName = "English"
+    weight = 1
+    [languages.en.params]
+      tagline = "Engineer. Coder. Problem Solver."
+      hero_description = "Structural engineer and software developer with 14+ years in Architecture, Engineering, and Construction (AEC), expanding expertise with AI/ML to build intelligent solutions for complex engineering problems."
+      hero_location = "Montréal, Canada"
+      collab_tags = [
+        "AI/ML Solutions",
+        "Engineering Software",
+        "R&D & Innovation",
+        "Technical Leadership",
+        "Construction Tech"
+      ]
+  [languages.es]
+    contentDir = "content/es"
+    languageName = "Español"
+    weight = 2
+    [languages.es.params]
+      tagline = "Ingeniero. Coder. Solucionador de problemas."
+      hero_description = "Ingeniero estructural y desarrollador de software con más de 14 años en Arquitectura, Ingeniería y Construcción (AEC), ampliando experiencia en IA/ML para crear soluciones inteligentes a problemas de ingeniería complejos."
+      hero_location = "Montreal, Canadá"
+      collab_tags = [
+        "Soluciones de IA/ML",
+        "Software de Ingeniería",
+        "I+D e Innovación",
+        "Liderazgo Técnico",
+        "Tecnología en Construcción"
+      ]
+  [languages.fr]
+    contentDir = "content/fr"
+    languageName = "Français"
+    weight = 3
+    [languages.fr.params]
+      tagline = "Ingénieur. Codeur. Résolveur de problèmes."
+      hero_description = "Ingénieur structure et développeur logiciel avec plus de 14 ans d'expérience dans l'architecture, l'ingénierie et la construction (AEC), développant des solutions intelligentes grâce à l'IA/ML pour résoudre des problèmes complexes."
+      hero_location = "Montréal, Canada"
+      collab_tags = [
+        "Solutions IA/ML",
+        "Logiciels d'ingénierie",
+        "R&D et Innovation",
+        "Leadership technique",
+        "Technologie de construction"
+      ]
+
+[build]
+  writeStats = true
+
+[params]
+name = "Felipe Cordero"
+email = "mail@felipecordero.com"
+profile_image = "/images/felipe-cordero-profile.jpg"
+author = "Felipe Cordero"
+
+og_image = "images/felipecordero-og.png"
+
+description = "Structural engineer and software developer expanding into AI/ML to solve complex engineering and automation challenges."
+
+linkedin_url = "https://www.linkedin.com/in/felipe-cordero-osorio"
+linkedin_text = "linkedin.com/in/felipe-cordero-osorio"
+github_url = "https://github.com/felipecordero"
+github_text = "github.com/felipecordero"
+
+copyright = "© 2025 | Felipe Cordero"
+
+
+resume_url_en = "/files/Felipe_Cordero_CV_English_version.pdf"
+resume_url_fr = "/files/Felipe_Cordero_CV_French_version.pdf"
+resume_label = "View CV"
+
+formspree_endpoint = "https://formspree.io/f/xgvkkdnn" # Change to your Formspree endpoint
+
+
+[[params.social]]
+icon = "linkedin-in"
+url = "https://www.linkedin.com/in/felipe-cordero-osorio/"
+
+[[params.social]]
+icon = "github"
+url = "https://github.com/felipecordero"
+
+sectionPagesMenu = 'main'
+
+
+[taxonomies]
+  tag = "tags"
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+  [markup.highlight]
+    style = "monokai"
+
+[server]
+  [[server.headers]]
+    for = "/**/*.css"
+    [server.headers.values]
+      Content-Type = "text/css"
+
+
+# Branding Configuration - Savannah King
+[params.colors]
+  # main_color   = "#A97142"  # Lion Brown, warm and dominant
+  # second_color = "#2E2E2E"  # Dark Charcoal, authority
+  # third_color  = "#E6B325"  # Golden Mane, majesty and power
+  main_color   = "#095BB0"  # Slightly Darker LinkedIn Blue, professional and trustworthy
+  second_color = "#004182"  # Darker Blue, for depth and sophistication
+  third_color  = "#8C8C8C"  # Neutral Gray, for balance and modernity
