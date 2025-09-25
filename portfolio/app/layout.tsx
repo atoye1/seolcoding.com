@@ -6,10 +6,10 @@ export const metadata: Metadata = {
   description: '인공지능 솔루션을 통해 비즈니스 혁신을 만들어가는 설코딩랩입니다.',
   icons: {
     icon: [
-      { url: '/favicon-removebg.png', sizes: '32x32', type: 'image/png' },
+      { url: '/images/favicon-removebg.png', sizes: '32x32', type: 'image/png' },
       { url: '/favicon.ico', sizes: '16x16', type: 'image/x-icon' },
     ],
-    apple: '/favicon-removebg.png',
+    apple: '/images/favicon-removebg.png',
     shortcut: '/favicon.ico',
   },
 }

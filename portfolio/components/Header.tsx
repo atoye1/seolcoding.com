@@ -31,7 +31,7 @@ export default function Header() {
           {/* Logo */}
           <div className="flex-shrink-0">
             <img
-              src="/logo-removebg.png"
+              src="/images/logo-removebg.png"
               alt="설코딩랩"
               className="h-16 w-auto"
             />
