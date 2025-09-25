@@ -27,10 +27,14 @@ export default function Header() {
       isScrolled ? 'bg-white/95 backdrop-blur-md shadow-lg' : 'bg-transparent'
     }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <h1 className="text-xl font-bold text-navy-900">설코딩랩</h1>
+            <img
+              src="/logo-removebg.png"
+              alt="설코딩랩"
+              className="h-16 w-auto"
+            />
           </div>
 
           {/* Desktop Navigation */}
