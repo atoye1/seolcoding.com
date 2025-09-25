@@ -50,12 +50,12 @@ jobs:
         # 임시 디렉토리 생성
         mkdir -p deploy_temp
 
-        # 1. Next.js 빌드 결과를 루트에 복사
-        cp -r portfolio/out/* deploy_temp/
+        # 1. Hexo 빌드 결과를 루트에 복사 (블로그가 메인)
+        cp -r public/* deploy_temp/
 
-        # 2. Hexo 빌드 결과를 /blog에 복사
-        mkdir -p deploy_temp/blog
-        cp -r public/* deploy_temp/blog/
+        # 2. Next.js 포트폴리오를 /portfolio에 복사
+        mkdir -p deploy_temp/portfolio
+        cp -r portfolio/out/* deploy_temp/portfolio/
 
         # 3. deprecated 디렉토리 복사
         mkdir -p deploy_temp/deprecated
