@@ -88,6 +88,22 @@ url = "https://www.linkedin.com/in/felipe-cordero-osorio/"
 icon = "github"
 url = "https://github.com/atoye1"
 
+[[params.social]]
+icon = "twitter"
+url = "https://twitter.com/your-handle"
+
+[[params.social]]
+icon = "youtube"
+url = "https://youtube.com/@your-channel"
+
+[[params.social]]
+icon = "instagram"
+url = "https://instagram.com/your-handle"
+
+[[params.social]]
+icon = "medium"
+url = "https://medium.com/@your-handle"
+
 sectionPagesMenu = 'main'
 
 
