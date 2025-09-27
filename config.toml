@@ -13,7 +13,7 @@ defaultContentLanguageInSubdir = false
     [languages.en.params]
       tagline = "IT로 현실의 문제를 해결하는 인디개발자"
       hero_description = "Structural engineer and software developer with 14+ years in Architecture, Engineering, and Construction (AEC), expanding expertise with AI/ML to build intelligent solutions for complex engineering problems."
-      hero_location = "Montréal, Canada"
+      hero_location = "Busan, South Korea"
       collab_tags = [
         "AI/ML Solutions",
         "Engineering Software",
@@ -43,7 +43,7 @@ defaultContentLanguageInSubdir = false
     [languages.fr.params]
       tagline = "Ingénieur. Codeur. Résolveur de problèmes."
       hero_description = "Ingénieur structure et développeur logiciel avec plus de 14 ans d'expérience dans l'architecture, l'ingénierie et la construction (AEC), développant des solutions intelligentes grâce à l'IA/ML pour résoudre des problèmes complexes."
-      hero_location = "Montréal, Canada"
+      hero_location = "Busan, South Korea"
       collab_tags = [
         "Solutions IA/ML",
         "Logiciels d'ingénierie",
