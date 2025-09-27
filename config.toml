@@ -1,6 +1,6 @@
 baseURL = "https://seolcoding.com"
 languageCode = "en-us"
-title = "Felipe Cordero"
+title = "설코딩"
 theme = "careercanvas"
 defaultContentLanguage = "en"
 defaultContentLanguageInSubdir = false
@@ -11,7 +11,7 @@ defaultContentLanguageInSubdir = false
     languageName = "English"
     weight = 1
     [languages.en.params]
-      tagline = "Engineer. Coder. Problem Solver."
+      tagline = "IT로 현실의 문제를 해결하는 인디개발자"
       hero_description = "Structural engineer and software developer with 14+ years in Architecture, Engineering, and Construction (AEC), expanding expertise with AI/ML to build intelligent solutions for complex engineering problems."
       hero_location = "Montréal, Canada"
       collab_tags = [
@@ -56,14 +56,14 @@ defaultContentLanguageInSubdir = false
   writeStats = true
 
 [params]
-name = "Felipe Cordero"
+name = "인디개발자 설코딩"
 email = "mail@seolcoding.com"
 profile_image = "/images/felipe-cordero-profile.jpg"
 author = "Felipe Cordero"
 
 og_image = "images/felipecordero-og.png"
 
-description = "Structural engineer and software developer expanding into AI/ML to solve complex engineering and automation challenges."
+description = "IT로 현실의 문제를 해결하는 인디개발자 설코딩입니다."
 
 linkedin_url = "https://www.linkedin.com/in/felipe-cordero-osorio"
 linkedin_text = "linkedin.com/in/felipe-cordero-osorio"

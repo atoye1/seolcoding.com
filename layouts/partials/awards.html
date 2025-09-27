@@ -1,0 +1,47 @@
+<!-- Awards Section -->
+<section id="awards" class="py-12 bg-bg-secondary dark:bg-bg-secondary border-t border-border-primary" data-animate>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    {{ with .Site.GetPage "awards" }}
+      <!-- Section heading -->
+      <h2 class="text-3xl font-bold text-center mb-4 font-heading text-text-primary dark:text-text-primary">{{ .Title }}</h2>
+      <p class="text-lg text-center mb-12 text-text-secondary dark:text-text-tertiary italic">{{ .Params.intro }}</p>
+
+      <!-- Awards grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-8">
+        {{ range $i, $award := .Params.awards }}
+        <div class="bg-gradient-to-br from-bg to-bg-tertiary dark:from-bg dark:to-bg-tertiary p-6 rounded-xl shadow-lg border border-border-primary dark:border-border-primary award-card card-hover" data-animate>
+
+          <!-- Award Header -->
+          <div class="flex items-start mb-4">
+            <div class="flex-shrink-0 mr-4">
+              <div class="w-12 h-12 bg-gradient-primary rounded-full flex items-center justify-center">
+                <i class="fas fa-{{ $award.icon }} text-white text-xl"></i>
+              </div>
+            </div>
+            <div class="flex-grow">
+              <div class="flex items-center justify-between mb-2">
+                <h3 class="text-lg font-heading font-bold text-text-primary dark:text-text-primary">{{ $award.title }}</h3>
+                <span class="bg-gradient-primary text-white px-3 py-1 rounded-full text-sm font-medium">{{ $award.year }}</span>
+              </div>
+              <p class="text-sm font-medium text-text-secondary dark:text-text-secondary mb-2">{{ $award.organization }}</p>
+            </div>
+          </div>
+
+          <!-- Award Description -->
+          <p class="text-text-secondary dark:text-text-tertiary leading-relaxed">{{ $award.description }}</p>
+
+          <!-- Award Badge -->
+          <div class="mt-4 pt-4 border-t border-border-primary dark:border-border-primary">
+            <div class="flex items-center justify-center">
+              <span class="inline-flex items-center bg-gradient-primary-lighter text-primary dark:text-primary-light px-4 py-2 rounded-full text-sm font-medium border border-primary-light">
+                <i class="fas fa-award mr-2"></i>
+                Recognition {{ $award.year }}
+              </span>
+            </div>
+          </div>
+        </div>
+        {{ end }}
+      </div>
+    {{ end }}
+  </div>
+</section>
