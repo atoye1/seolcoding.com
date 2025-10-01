@@ -14,7 +14,7 @@
             </a>
             <div class="submenu absolute left-0 top-full mt-2 bg-bg dark:bg-bg shadow-lg rounded-lg z-50 min-w-[10rem] opacity-0 invisible">
               {{ range .Children }}
-                <a href="{{ .URL | relLangURL }}" class="nav-link block px-4 py-2 text-sm text-text-primary dark:text-text-primary">
+                <a href="{{ .URL | relLangURL }}" target="_blank" rel="noopener noreferrer" class="nav-link block px-4 py-2 text-sm text-text-primary dark:text-text-primary hover:bg-bg-secondary dark:hover:bg-bg-tertiary">
                   {{ .Name }}
                 </a>
               {{ end }}
@@ -109,7 +109,7 @@
         {{ end }}
         {{ if .HasChildren }}
           {{ range .Children }}
-            <a href="{{ .URL | relLangURL }}" class="block pl-6 py-1 text-sm text-text-tertiary dark:text-text-tertiary">{{ .Name }}</a>
+            <a href="{{ .URL | relLangURL }}" target="_blank" rel="noopener noreferrer" class="block pl-6 py-1 text-sm text-text-tertiary dark:text-text-tertiary hover:text-text-primary dark:hover:text-text-primary">{{ .Name }}</a>
           {{ end }}
         {{ end }}
       {{ end }}
@@ -153,6 +153,10 @@
 
   <!-- Additional styles -->
   <style>
+    .group:hover .submenu {
+      opacity: 1 !important;
+      visibility: visible !important;
+    }
     .group.open .submenu {
       opacity: 1 !important;
       visibility: visible !important;
