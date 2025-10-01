@@ -12,10 +12,11 @@
               {{ .Pre | safeHTML }}{{ .Name }}
               <i class="fas fa-chevron-down ml-2 text-sm"></i>
             </a>
-            <div class="submenu absolute left-0 top-full mt-2 bg-bg dark:bg-bg shadow-lg rounded-lg z-50 min-w-[10rem] opacity-0 invisible">
+            <div class="submenu absolute left-0 top-full mt-0 bg-bg dark:bg-bg shadow-lg rounded-lg z-50 min-w-[10rem] opacity-0 invisible pt-2">
               {{ range .Children }}
-                <a href="{{ .URL | relLangURL }}" target="_blank" rel="noopener noreferrer" class="nav-link block px-4 py-2 text-sm text-text-primary dark:text-text-primary hover:bg-bg-secondary dark:hover:bg-bg-tertiary">
+                <a href="{{ .URL | relLangURL }}" target="_blank" rel="noopener noreferrer" class="nav-link block px-4 py-2 text-sm text-text-primary dark:text-text-primary hover:bg-bg-secondary dark:hover:bg-bg-tertiary rounded">
                   {{ .Name }}
+                  <i class="fas fa-external-link-alt ml-2 text-xs opacity-70"></i>
                 </a>
               {{ end }}
             </div>
@@ -109,7 +110,10 @@
         {{ end }}
         {{ if .HasChildren }}
           {{ range .Children }}
-            <a href="{{ .URL | relLangURL }}" target="_blank" rel="noopener noreferrer" class="block pl-6 py-1 text-sm text-text-tertiary dark:text-text-tertiary hover:text-text-primary dark:hover:text-text-primary">{{ .Name }}</a>
+            <a href="{{ .URL | relLangURL }}" target="_blank" rel="noopener noreferrer" class="block pl-6 py-1 text-sm text-text-tertiary dark:text-text-tertiary hover:text-text-primary dark:hover:text-text-primary">
+              {{ .Name }}
+              <i class="fas fa-external-link-alt ml-2 text-xs opacity-70"></i>
+            </a>
           {{ end }}
         {{ end }}
       {{ end }}
