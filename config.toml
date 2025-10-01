@@ -30,13 +30,17 @@ defaultContentLanguageInSubdir = false
       url = "/projects/"
       weight = 2
     [[languages.ko.menu.main]]
+      name = "강의"
+      url = "/courses/"
+      weight = 3
+    [[languages.ko.menu.main]]
       name = "블로그"
       url = "/blog/"
-      weight = 3
+      weight = 4
     [[languages.ko.menu.main]]
       name = "연락"
       url = "#contact"
-      weight = 4
+      weight = 5
   [languages.en]
     contentDir = "content/en"
     languageName = "English"
