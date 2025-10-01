@@ -1,6 +1,7 @@
 # SeolCoding.com - Project Guide
 
 ## Quick Start
+
 ```bash
 npm install          # Install dependencies (Tailwind CSS)
 npm run build:css    # Build CSS
@@ -10,38 +11,47 @@ npm run build        # Build for production
 ```
 
 ## Architecture
+
 - **Framework**: Hugo v0.147+ (Extended)
 - **Theme**: CareerCanvas (Git submodule)
 - **Styling**: Tailwind CSS 3.4+
 - **Language**: Korean (defaultContentLanguage = "ko")
 - **Deploy**: GitHub Actions → GitHub Pages
-- **Domain**: https://seolcoding.com
+- **Domain**: <https://seolcoding.com>
 
 ## Theme Customization Strategy
+
 **⚠️ CRITICAL**: Theme is a Git submodule. NEVER modify `themes/careercanvas/` directly.
 
 ### Override Method
+
 Copy theme files to project root:
+
 ```bash
 cp themes/careercanvas/layouts/partials/contact.html layouts/partials/contact.html
 ```
+
 Hugo priority: `layouts/` > `themes/careercanvas/layouts/`
 
 ## Current Customizations
 
 ### Content Structure
+
 - **Korean-only site** (no /ko/ prefix in URLs)
 - **Sections**: Projects, Courses, Blog
 - **Front matter**: TOML (`+++`) for projects/courses, YAML (`---`) for blog posts
 - **No _index.md** in blog/ directory (matches English template)
 
 ### Navigation Menu
+
 **Menu order**: 프로젝트 | 강의 | 블로그 | 서비스(dropdown)
+
 - "소개", "연락" removed from menu (accessible via hero section)
 - i18n language switcher hidden (code preserved)
 - Services dropdown with 3 demo links (open in new tab)
 
 ### Layout Overrides
+
 1. **hero.html**: Added 3 service cards (교육, 멘토링, 개발) below social links
 2. **about.html**: Removed LinkedIn button, added seolcoding_logo.png + 연락하기 button
 3. **contact.html**: 3-column layout (Google Form QR | Kakao OpenChat QR | Contact Info)
@@ -50,6 +60,7 @@ Hugo priority: `layouts/` > `themes/careercanvas/layouts/`
 6. **nav.html**: Dropdown hover support, services menu, hidden i18n switcher
 
 ### Key Config (config.toml)
+
 ```toml
 defaultContentLanguage = "ko"
 defaultContentLanguageInSubdir = false
@@ -68,11 +79,14 @@ kakao_openchat_url = "https://open.kakao.com/YOUR_OPENCHAT_ID"
 ```
 
 ### i18n Translations (i18n/ko.toml)
+
 Added translations for:
+
 - Services section (services, educationService, mentoringService, developmentService)
 - QR contact sections (googleForm, kakaoOpenChat, buttons)
 
 ## Static Assets Required
+
 ```
 static/images/
 ├── seolcoding_logo.png        # About section logo
@@ -83,12 +97,15 @@ static/images/
 ```
 
 ## Deployment
+
 GitHub Actions workflow deploys on push to main:
+
 - Builds CSS with Tailwind
 - Builds Hugo site with --minify
 - Deploys to GitHub Pages (seolcoding.com)
 
 ## Common Commands
+
 ```bash
 # Development
 hugo server -D
@@ -105,6 +122,7 @@ git submodule update --remote
 ```
 
 ## Important Notes
+
 - Always test locally before pushing to main
 - CSS changes require `npm run build:css`
 - Theme updates may require re-applying customizations
