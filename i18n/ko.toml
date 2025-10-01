@@ -128,3 +128,24 @@ other = "여기에는 없습니다"
 
 [awards]
 other = "수상 및 표창"
+
+[services]
+other = "제공 서비스"
+
+[educationService]
+other = "AI/클라우드 교육"
+
+[educationDesc]
+other = "실무 중심의 생성형 AI 교육 프로그램"
+
+[mentoringService]
+other = "멘토링"
+
+[mentoringDesc]
+other = "시민개발자 및 공공혁신 멘토링"
+
+[developmentService]
+other = "개발"
+
+[developmentDesc]
+other = "생성형 AI 솔루션 개발 및 컨설팅"
