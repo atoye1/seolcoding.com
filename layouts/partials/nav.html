@@ -30,7 +30,7 @@
           {{ end }}
           {{ end }}
         {{ end }}
-        <!-- Language Switcher (Dropdown) -->
+        <!-- Language Switcher (Dropdown) - Hidden -->
         {{ $homes := $.Site.Home.AllTranslations }}
         {{ if gt (len $homes) 1 }}
         {{/* Determine current language flag */}}
@@ -38,7 +38,7 @@
         {{ $currentFlag := "🏳️" }}
         {{ if eq $cur "ko" }}{{ $currentFlag = "🇰🇷" }}{{ end }}
         {{ if eq $cur "en" }}{{ $currentFlag = "🇬🇧" }}{{ end }}
-        <div class="relative group">
+        <div class="relative group hidden">
           <a href="#" class="nav-link text-text-primary dark:text-text-primary flex items-center" aria-label="Language switcher">
             <span class="text-lg mr-1">{{ $currentFlag }}</span>
             <i class="fas fa-chevron-down ml-1 text-sm"></i>
@@ -63,7 +63,7 @@
                     {{ end }}
                   {{ end }}
                 {{ end }}
-                
+
                 <a href="{{ $targetURL }}" class="nav-link block px-4 py-2 text-sm text-text-primary dark:text-text-primary {{ if eq .Language.Lang $.Site.Language.Lang }}font-semibold{{ end }}">
                   <span class="mr-2">{{ $flag }}</span>{{ .Language.LanguageName }}
                 </a>
@@ -113,10 +113,10 @@
           {{ end }}
         {{ end }}
       {{ end }}
-      <!-- Mobile Language Switcher (Inline flags) -->
+      <!-- Mobile Language Switcher (Inline flags) - Hidden -->
       {{ $homes := $.Site.Home.AllTranslations }}
       {{ if gt (len $homes) 1 }}
-      <div class="px-3 py-2 border-t border-border-primary dark:border-border-primary">
+      <div class="px-3 py-2 border-t border-border-primary dark:border-border-primary hidden">
         <div class="flex items-center space-x-3">
           {{ $order := slice "ko" "en" }}
           {{ range $order }}
@@ -126,7 +126,7 @@
               {{ $flag := "🏳️" }}
               {{ if eq $lang "ko" }}{{ $flag = "🇰🇷" }}{{ end }}
               {{ if eq $lang "en" }}{{ $flag = "🇬🇧" }}{{ end }}
-              
+
               {{/* Check if current page has a translation in this language */}}
               {{ $targetURL := .RelPermalink }}
               {{ $hasTranslation := false }}
@@ -138,7 +138,7 @@
                   {{ end }}
                 {{ end }}
               {{ end }}
-              
+
               <a href="{{ $targetURL }}" class="px-2 py-1 text-xl {{ if eq .Language.Lang $.Site.Language.Lang }}opacity-100 font-semibold{{ else }}opacity-70 hover:opacity-100{{ end }}" aria-label="Switch to {{ .Language.LanguageName }}{{ if $hasTranslation }} (has translation){{ else }} (go to home){{ end }}">
                 <span aria-hidden="true">{{ $flag }}</span>
               </a>
