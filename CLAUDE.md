@@ -11,123 +11,101 @@ npm run build        # Build for production
 
 ## Architecture
 - **Framework**: Hugo v0.147+ (Extended)
-- **Theme**: CareerCanvas (Git submodule from felipecordero/careercanvas)
+- **Theme**: CareerCanvas (Git submodule)
 - **Styling**: Tailwind CSS 3.4+
-- **Languages**: EN, ES, FR (multi-language support)
+- **Language**: Korean (defaultContentLanguage = "ko")
 - **Deploy**: GitHub Actions → GitHub Pages
 - **Domain**: https://seolcoding.com
 
 ## Theme Customization Strategy
-**⚠️ CRITICAL**: Theme is a Git submodule. NEVER modify files in `themes/careercanvas/` directly.
+**⚠️ CRITICAL**: Theme is a Git submodule. NEVER modify `themes/careercanvas/` directly.
 
-### Override Method (RECOMMENDED)
-Copy theme files to project root to customize:
+### Override Method
+Copy theme files to project root:
 ```bash
-# Example: Customize contact form
 cp themes/careercanvas/layouts/partials/contact.html layouts/partials/contact.html
-# Edit layouts/partials/contact.html (this overrides theme)
 ```
-
 Hugo priority: `layouts/` > `themes/careercanvas/layouts/`
 
-## Project Structure
-```
-/
-├── config.toml              # Main config (baseURL: https://seolcoding.com)
-├── content/
-│   ├── en/                 # English content
-│   ├── es/                 # Spanish content
-│   └── fr/                 # French content
-├── layouts/                # Theme overrides (CREATE AS NEEDED)
-│   └── partials/          # Override specific components
-├── themes/careercanvas/    # DO NOT MODIFY (submodule)
-├── i18n/                  # Translation files (en.toml, es.toml, fr.toml)
-├── static/                # Static assets
-├── package.json           # Node dependencies & build scripts
-└── .github/workflows/hugo.yml # Auto deploy
-```
+## Current Customizations
 
-## Multi-language Setup
-Fixed "page reference ambiguous" error in theme partials by updating GetPage calls:
-```go
-// Original (causes error in multilingual setup)
-{{ with .Site.GetPage "about" }}
+### Content Structure
+- **Korean-only site** (no /ko/ prefix in URLs)
+- **Sections**: Projects, Courses, Blog
+- **Front matter**: TOML (`+++`) for projects/courses, YAML (`---`) for blog posts
+- **No _index.md** in blog/ directory (matches English template)
 
-// Fixed
-{{ with site.GetPage (printf "%s/%s" .Language.Lang "about") }}
-```
+### Navigation Menu
+**Menu order**: 프로젝트 | 강의 | 블로그 | 서비스(dropdown)
+- "소개", "연락" removed from menu (accessible via hero section)
+- i18n language switcher hidden (code preserved)
+- Services dropdown with 3 demo links (open in new tab)
 
-## Common Issues
+### Layout Overrides
+1. **hero.html**: Added 3 service cards (교육, 멘토링, 개발) below social links
+2. **about.html**: Removed LinkedIn button, added seolcoding_logo.png + 연락하기 button
+3. **contact.html**: 3-column layout (Google Form QR | Kakao OpenChat QR | Contact Info)
+4. **footer.html**: Simplified - removed description, removed collab tags, kept tagline/location/email/SNS only
+5. **list.html**: Added lorem picsum placeholders for missing featured_image
+6. **nav.html**: Dropdown hover support, services menu, hidden i18n switcher
 
-### 1. macOS Resource Fork Files
-```bash
-# Remove ._* files created by macOS (appear after downloads/extracts)
-find content -name "._*" -type f -delete
-```
-
-### 2. PostCSS/Tailwind Build Errors
-Ensure all config files exist:
-- `postcss.config.js`
-- `tailwind.config.js`
-- `package.json`
-
-### 3. Hugo Theme Build Errors
-If encountering layout errors, check:
-```bash
-# Verify submodule is properly initialized
-git submodule update --init --recursive
-
-# Check Hugo version (needs Extended)
-hugo version
-
-# Verify Node dependencies
-npm list tailwindcss
-```
-
-### 4. Raw HTML Warnings (Optional)
-Add to `config.toml` if needed:
+### Key Config (config.toml)
 ```toml
-[markup.goldmark.renderer]
-  unsafe = true
+defaultContentLanguage = "ko"
+defaultContentLanguageInSubdir = false
+
+# QR Contact URLs
+google_form_url = "https://forms.gle/YOUR_GOOGLE_FORM_ID"
+kakao_openchat_url = "https://open.kakao.com/YOUR_OPENCHAT_ID"
+
+# Services menu with dropdown
+[[languages.ko.menu.main]]
+  name = "서비스"
+  identifier = "services"
+  [[languages.ko.menu.main]]
+    name = "데모 서비스 1"
+    parent = "services"
+```
+
+### i18n Translations (i18n/ko.toml)
+Added translations for:
+- Services section (services, educationService, mentoringService, developmentService)
+- QR contact sections (googleForm, kakaoOpenChat, buttons)
+
+## Static Assets Required
+```
+static/images/
+├── seolcoding_logo.png        # About section logo
+├── seoldonghun-profile.jpg    # Hero profile image
+└── qr/
+    ├── google-form-qr.png     # Contact QR code
+    └── kakao-openchat-qr.png  # Contact QR code
 ```
 
 ## Deployment
-GitHub Actions automatically builds and deploys on push to main:
-- Workflow: `.github/workflows/hugo.yml`
-- Installs Node.js dependencies
+GitHub Actions workflow deploys on push to main:
 - Builds CSS with Tailwind
 - Builds Hugo site with --minify
-- Deploys to GitHub Pages
-- Custom domain: seolcoding.com
+- Deploys to GitHub Pages (seolcoding.com)
 
-## Essential Commands
+## Common Commands
 ```bash
 # Development
-hugo server -D          # Dev server with drafts
-hugo server            # Dev server without drafts
+hugo server -D
 
-# Building
-npm run build:css      # Tailwind CSS only
-hugo --minify         # Hugo build only
-npm run build         # Full production build
+# Build CSS only
+npm run build:css
 
-# Git Submodule Management
-git submodule update --init --recursive  # Initialize theme
-git submodule update --remote           # Update theme to latest
+# Full production build
+npm run build
+
+# Theme management
+git submodule update --init --recursive
+git submodule update --remote
 ```
-
-## Contact Form Configuration
-Currently uses Formspree service (see `config.toml: formspree_endpoint`).
-To modify form behavior: Override `layouts/partials/contact.html`
-
-## Key Configuration Files
-- `config.toml` - Site configuration, multilingual setup, theme params
-- `package.json` - Build scripts and dependencies
-- `i18n/*.toml` - UI text translations
-- `.github/workflows/hugo.yml` - CI/CD pipeline
 
 ## Important Notes
 - Always test locally before pushing to main
-- Theme updates may require manual merge of customizations
-- CSS changes require `npm run build:css` to take effect
-- Multilingual content must follow `/content/{lang}/` structure
+- CSS changes require `npm run build:css`
+- Theme updates may require re-applying customizations
+- All Korean content in `content/ko/`
