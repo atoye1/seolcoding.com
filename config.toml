@@ -85,6 +85,10 @@ resume_label = "View CV"
 
 formspree_endpoint = "https://formspree.io/f/xgvkkdnn" # Change to your Formspree endpoint
 
+# Contact QR Codes
+google_form_url = "https://forms.gle/YOUR_GOOGLE_FORM_ID" # Replace with your Google Form URL
+kakao_openchat_url = "https://open.kakao.com/YOUR_OPENCHAT_ID" # Replace with your Kakao OpenChat URL
+
 
 [[params.social]]
 icon = "linkedin-in"

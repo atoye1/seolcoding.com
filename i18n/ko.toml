@@ -149,3 +149,21 @@ other = "개발"
 
 [developmentDesc]
 other = "생성형 AI 솔루션 개발 및 컨설팅"
+
+[googleForm]
+other = "구글 폼"
+
+[googleFormDesc]
+other = "간단한 문의나 상담 신청은 구글 폼으로 작성해주세요."
+
+[googleFormButton]
+other = "구글 폼 열기"
+
+[kakaoOpenChat]
+other = "카카오톡 오픈채팅"
+
+[kakaoOpenChatDesc]
+other = "빠른 답변이 필요하시면 오픈채팅방으로 문의해주세요."
+
+[kakaoOpenChatButton]
+other = "오픈채팅 참여하기"
