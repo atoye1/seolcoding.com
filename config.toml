@@ -21,6 +21,22 @@ defaultContentLanguageInSubdir = false
         "정부 혁신",
         "공공 데이터 분석"
       ]
+    [[languages.ko.menu.main]]
+      name = "소개"
+      url = "#about"
+      weight = 1
+    [[languages.ko.menu.main]]
+      name = "프로젝트"
+      url = "/projects/"
+      weight = 2
+    [[languages.ko.menu.main]]
+      name = "블로그"
+      url = "/blog/"
+      weight = 3
+    [[languages.ko.menu.main]]
+      name = "연락"
+      url = "#contact"
+      weight = 4
   [languages.en]
     contentDir = "content/en"
     languageName = "English"
@@ -89,9 +105,6 @@ url = "https://instagram.com/seolcoding"
 [[params.social]]
 icon = "rss"
 url = "/blog"
-
-sectionPagesMenu = 'main'
-
 
 [taxonomies]
   tag = "tags"
