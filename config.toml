@@ -22,36 +22,40 @@ defaultContentLanguageInSubdir = false
         "공공 데이터 분석"
       ]
     [[languages.ko.menu.main]]
+      name = "홈"
+      url = "/"
+      weight = 1
+    [[languages.ko.menu.main]]
       name = "프로젝트"
       url = "/projects/"
-      weight = 1
+      weight = 2
     [[languages.ko.menu.main]]
       name = "강의"
       url = "/courses/"
-      weight = 2
+      weight = 3
     [[languages.ko.menu.main]]
       name = "블로그"
       url = "/blog/"
-      weight = 3
+      weight = 4
     [[languages.ko.menu.main]]
       name = "서비스"
       url = "#"
-      weight = 4
+      weight = 5
       identifier = "services"
     [[languages.ko.menu.main]]
       name = "데모 서비스 1"
       url = "https://naver.com"
-      weight = 41
+      weight = 51
       parent = "services"
     [[languages.ko.menu.main]]
       name = "데모 서비스 2"
       url = "https://google.com"
-      weight = 42
+      weight = 52
       parent = "services"
     [[languages.ko.menu.main]]
       name = "데모 서비스 3"
       url = "https://youtube.com"
-      weight = 43
+      weight = 53
       parent = "services"
   [languages.en]
     contentDir = "content/en"
