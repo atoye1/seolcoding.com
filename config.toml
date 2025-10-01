@@ -1,78 +1,64 @@
 baseURL = "https://seolcoding.com"
-languageCode = "en-us"
+languageCode = "ko-kr"
 title = "설코딩"
 theme = "careercanvas"
-defaultContentLanguage = "en"
+defaultContentLanguage = "ko"
 defaultContentLanguageInSubdir = false
 
 [languages]
+  [languages.ko]
+    contentDir = "content/ko"
+    languageName = "한국어"
+    weight = 1
+    [languages.ko.params]
+      tagline = "현실의 문제를 AI로 해결하는 인디개발자"
+      hero_description = "공공기관에서 9년째 근무하고 있으며, 동시에 시민개발자로서 생성형 AI로 공공 서비스를 혁신하려는 시도를 많이 해왔습니다. 과기정통부 장관상(대상)과 행안부 장관상(최우수상)을 포함해 정부 공식 대회에서 5회 수상했습니다. 노년층을 위한 AI 어시스턴트부터 직원 교육 챗봇까지, AI 기술로 공공 서비스의 접근성과 효율성을 높이기 위해 연구하고 노력하고 있습니다."
+      hero_location = "부산, 대한민국"
+      collab_tags = [
+        "공공 부문 생성형 AI",
+        "클라우드 아키텍처 (AWS)",
+        "AI 교육 및 트레이닝",
+        "정부 혁신",
+        "공공 데이터 분석"
+      ]
   [languages.en]
     contentDir = "content/en"
     languageName = "English"
-    weight = 1
-    [languages.en.params]
-      tagline = "IT로 현실의 문제를 해결하는 인디개발자"
-      hero_description = "Structural engineer and software developer with 14+ years in Architecture, Engineering, and Construction (AEC), expanding expertise with AI/ML to build intelligent solutions for complex engineering problems."
-      hero_location = "Busan, South Korea"
-      collab_tags = [
-        "AI/ML Solutions",
-        "Engineering Software",
-        "R&D & Innovation",
-        "Technical Leadership",
-        "Construction Tech"
-      ]
-  [languages.es]
-    contentDir = "content/es"
-    languageName = "Español"
     weight = 2
-    [languages.es.params]
-      tagline = "Ingeniero. Coder. Solucionador de problemas."
-      hero_description = "Ingeniero estructural y desarrollador de software con más de 14 años en Arquitectura, Ingeniería y Construcción (AEC), ampliando experiencia en IA/ML para crear soluciones inteligentes a problemas de ingeniería complejos."
-      hero_location = "Montreal, Canadá"
-      collab_tags = [
-        "Soluciones de IA/ML",
-        "Software de Ingeniería",
-        "I+D e Innovación",
-        "Liderazgo Técnico",
-        "Tecnología en Construcción"
-      ]
-  [languages.fr]
-    contentDir = "content/fr"
-    languageName = "Français"
-    weight = 3
-    [languages.fr.params]
-      tagline = "Ingénieur. Codeur. Résolveur de problèmes."
-      hero_description = "Ingénieur structure et développeur logiciel avec plus de 14 ans d'expérience dans l'architecture, l'ingénierie et la construction (AEC), développant des solutions intelligentes grâce à l'IA/ML pour résoudre des problèmes complexes."
+    [languages.en.params]
+      tagline = "Public AI Innovator. Cloud Architect. Educator."
+      hero_description = "9 years of public sector innovation at Busan Transportation Corporation. Awarded by Ministry of Science and ICT (Grand Prize) and Ministry of Interior and Safety (Excellence Prize) for Generative AI solutions. Transforming public services through AI, from elderly-friendly assistants to employee training chatbots."
       hero_location = "Busan, South Korea"
       collab_tags = [
-        "Solutions IA/ML",
-        "Logiciels d'ingénierie",
-        "R&D et Innovation",
-        "Leadership technique",
-        "Technologie de construction"
+        "Generative AI for Public Sector",
+        "Cloud Architecture (AWS)",
+        "AI Education & Training",
+        "Government Innovation",
+        "Public Data Analytics"
       ]
 
 [build]
   writeStats = true
 
 [params]
-name = "인디개발자 설코딩"
-email = "mail@seolcoding.com"
-profile_image = "/images/felipe-cordero-profile.jpg"
-author = "Felipe Cordero"
+name = "설동헌(설코딩)"
+email = "ssalssi1@gmail.com"
+profile_image = "/images/seoldonghun-profile.jpg"
+author = "Seol Dongheon"
 
-og_image = "images/felipecordero-og.png"
+og_image = "images/seolcoding-og.png"
 
-description = "IT로 현실의 문제를 해결하는 인디개발자 설코딩입니다."
+description = "공공기관에서 9년째 근무하며 시민개발자로서 생성형 AI로 공공 서비스를 혁신하려는 시도를 많이 해왔습니다. 과기정통부·행안부 장관상을 포함해 정부 공식 대회에서 5회 수상했습니다."
 
-linkedin_url = "https://www.linkedin.com/in/felipe-cordero-osorio"
-linkedin_text = "linkedin.com/in/felipe-cordero-osorio"
+linkedin_url = "https://www.linkedin.com/in/%EB%8F%99%ED%97%8C-%EC%84%A4-57637015b/"
+linkedin_text = "linkedin.com/in/설동헌"
 github_url = "https://github.com/atoye1"
 github_text = "github.com/atoye1"
 
-copyright = "© 2025 | Felipe Cordero"
+copyright = "© 2025 | 설동헌(설코딩)"
 
 
+resume_url_ko = "/files/seoldonghun_resume.pdf"
 resume_url_en = "/files/Felipe_Cordero_CV_English_version.pdf"
 resume_url_fr = "/files/Felipe_Cordero_CV_French_version.pdf"
 resume_label = "View CV"
@@ -82,7 +68,7 @@ formspree_endpoint = "https://formspree.io/f/xgvkkdnn" # Change to your Formspre
 
 [[params.social]]
 icon = "linkedin-in"
-url = "https://www.linkedin.com/in/felipe-cordero-osorio/"
+url = "https://www.linkedin.com/in/%EB%8F%99%ED%97%8C-%EC%84%A4-57637015b/"
 
 [[params.social]]
 icon = "github"
@@ -90,19 +76,19 @@ url = "https://github.com/atoye1"
 
 [[params.social]]
 icon = "twitter"
-url = "https://twitter.com/your-handle"
+url = "https://x.com/seolcoding/"
 
 [[params.social]]
 icon = "youtube"
-url = "https://youtube.com/@your-channel"
+url = "https://www.youtube.com/@seolcoding"
 
 [[params.social]]
 icon = "instagram"
-url = "https://instagram.com/your-handle"
+url = "https://instagram.com/seolcoding"
 
 [[params.social]]
-icon = "medium"
-url = "https://medium.com/@your-handle"
+icon = "rss"
+url = "/blog"
 
 sectionPagesMenu = 'main'
 
