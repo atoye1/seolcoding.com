@@ -24,7 +24,7 @@ quickfacts:
     value: "부산교통공사 대리 (9년 5개월)"
   - icon: "graduation-cap"
     title: "학력"
-    value: "🎓 <strong>부경대학교</strong> 정보통신공학 석사 재학 중<br>🎓 <strong>한국방송통신대학교</strong> 컴퓨터과학 학사 (학점: 4.3/4.5)"
+    value: "🎓 <strong>부경대학교</strong> 정보통신공학 석사 재학 중"
   - icon: "award"
     title: "주요 수상"
     value: "🏆 <strong>과기정통부 장관상(대상)</strong> - DPG AI 해커톤 (2024)<br>🏆 <strong>행안부 장관상(최우수상)</strong> - 공공분야 초거대 AI 활용사례 (2023)<br>🏅 부산시장상, 한국중부발전 사장상, 국회 장려상"
