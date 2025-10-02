@@ -92,8 +92,8 @@ static/images/
 ├── seolcoding_logo.png        # About section logo
 ├── seoldonghun-profile.jpg    # Hero profile image
 └── qr/
-    ├── google-form-qr.png     # Contact QR code
-    └── kakao-openchat-qr.png  # Contact QR code
+    ├── seolcoding_google_qr.png     # Contact QR code
+    └── seolcoding_kakao_qr.png  # Contact QR code
 ```
 
 ## Deployment
