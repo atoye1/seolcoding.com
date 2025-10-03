@@ -57,6 +57,11 @@ defaultContentLanguageInSubdir = false
       url = "https://youtube.com"
       weight = 53
       parent = "services"
+    [[languages.ko.menu.main]]
+      name = "부산 평생교육 DB"
+      url = "/busan_edu_db/"
+      weight = 54
+      parent = "services"
   [languages.en]
     contentDir = "content/en"
     languageName = "English"
