@@ -12,7 +12,7 @@ defaultContentLanguageInSubdir = false
     weight = 1
     [languages.ko.params]
       tagline = "현실의 문제를 AI로 해결하는 인디개발자"
-      hero_description = "공공기관에서 9년째 근무하고 있으며, 동시에 시민개발자로서 생성형 AI로 공공 서비스를 혁신하려는 시도를 많이 해왔습니다. 과기정통부 장관상(대상)과 행안부 장관상(최우수상)을 포함해 정부 공식 대회에서 5회 수상했습니다. 노년층을 위한 AI 어시스턴트부터 직원 교육 챗봇까지, AI 기술로 공공 서비스의 접근성과 효율성을 높이기 위해 연구하고 노력하고 있습니다."
+      hero_description = "<strong class=\"font-bold text-amber-400\">정부 대회 5회 수상</strong>, 공공기관 9년 근무 경력을 가진 AI 개발자입니다. <span class=\"font-semibold text-yellow-300 underline decoration-amber-400 decoration-2\">기획부터 배포까지</span> 개발의 전 과정을 책임지며, 강의 · 멘토링 · 개발을 통해 <strong class=\"font-semibold text-amber-300\">모두의 AI Transformation</strong>을 돕습니다."
       hero_location = "부산, 대한민국"
       collab_tags = [
         "공공 부문 생성형 AI",
