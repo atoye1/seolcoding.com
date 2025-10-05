@@ -127,3 +127,4 @@ git submodule update --remote
 - CSS changes require `npm run build:css`
 - Theme updates may require re-applying customizations
 - All Korean content in `content/ko/`
+- hugo server is always running in background
