@@ -1,147 +1,164 @@
 <section id="about" class="py-12 bg-bg dark:bg-bg relative about-section" data-animate>
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
     <h2 class="text-3xl font-bold text-center mb-12 font-heading text-text-primary dark:text-text-primary about-text-element">{{ i18n "aboutMe" }}</h2>
-    <div class="flex flex-col lg:flex-row gap-8">
-      <div class="flex-1 about-text-element">
+
+    <!-- 2-Column Layout -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+
+      <!-- Left Column: Position, Education, Awards & Projects -->
+      <div class="space-y-6">
+        {{ with .Site.GetPage "about" }}
+        {{ $experiencePage := .Site.GetPage "experience" }}
+
+        <!-- Current Position -->
         <div class="bg-gradient-to-br from-bg-secondary to-bg-tertiary dark:from-bg-secondary dark:to-bg-tertiary p-6 rounded-xl shadow-lg border border-border-primary dark:border-border-primary">
-          <p class="text-lg text-text-secondary dark:text-text-secondary leading-relaxed">
-            {{ with .Site.GetPage "about" }}{{ .Params.intro | markdownify }}{{ end }}
-          </p>
-
-          <!-- 설코딩 로고 추가 -->
-          <div class="mt-8 mb-8 flex justify-center">
-            <img
-              src="/images/seolcoding_logo.png"
-              alt="설코딩 로고"
-              class="max-w-xs w-full h-auto"
-              loading="lazy"
-            >
+          <div class="flex items-center mb-4">
+            <i class="fas fa-briefcase text-primary dark:text-primary-light text-2xl mr-3"></i>
+            <h3 class="text-xl font-bold text-text-primary dark:text-text-primary">현재 직책</h3>
           </div>
-
-          <!-- 연락하기 버튼으로 변경 -->
-          <div class="mt-6">
-            <a href="#contact" class="inline-flex items-center bg-gradient-primary text-white px-6 py-3 rounded-lg shadow-lg about-button button-hover section-link">
-              <i class="fas fa-envelope mr-3 text-lg"></i>
-              {{ i18n "getInTouch" }}
-            </a>
+          {{ range first 1 $experiencePage.Params.positions }}
+          <div class="space-y-2">
+            <h4 class="text-lg font-semibold text-text-primary dark:text-text-primary">{{ .company }}</h4>
+            <p class="text-base text-primary dark:text-white font-medium">{{ .role }}</p>
+            <div class="inline-flex items-center bg-gradient-primary text-white px-3 py-1.5 rounded-full text-sm">
+              <i class="fas fa-calendar-alt mr-2"></i>{{ .period }}
+            </div>
+            <p class="text-sm text-gray-700 dark:text-text-tertiary mt-2">{{ .company_description }}</p>
           </div>
+          {{ end }}
         </div>
-      </div>
-      <div class="flex-1">
-        <div class="bg-gradient-to-br from-bg-secondary to-bg-tertiary dark:from-bg-secondary dark:to-bg-tertiary p-6 rounded-xl shadow-lg border border-border-primary dark:border-border-primary about-card card-hover">
-        <div class="flex items-center justify-between mb-6 border-b border-border-primary dark:border-border-primary pb-3">
-          <h3 class="text-xl font-semibold font-heading text-text-primary dark:text-text-primary flex items-center about-text-element">
-            <i class="fas fa-info-circle mr-3 text-primary dark:text-white"></i>
-            {{ i18n "quickFacts" }}
-          </h3>
-          <button id="aboutModalBtn" class="bg-gradient-primary text-white px-6 py-2 rounded-lg shadow-lg font-semibold flex items-center about-button text-sm button-hover">
-            <i class="fas fa-book-open mr-2"></i>
-            {{ i18n "more" }}
-          </button>
-        </div>
-        <div class="space-y-2">
-          {{ with .Site.GetPage "about" }}
-            {{ range $index, $fact := .Params.quickfacts }}
-              <div class="flex items-start quick-fact-card about-text-element py-3 px-4 rounded-xl">
-                <i class="fas fa-{{ $fact.icon }} text-primary dark:text-white text-lg mr-3"></i>
-                <div class="flex-1">
-                  <h4 class="font-bold text-gray-900 dark:text-text-primary mb-1 text-lg">{{ $fact.title }}</h4>
-                  {{ $titleLower := lower $fact.title }}
-                  {{ $i18nInterests := lower (i18n "interests") }}
-                  {{ $i18nLanguages := lower (i18n "languages") }}
-                  {{ $isInterests := or (eq $fact.kind "interests") (eq $fact.title "Interests") (eq $titleLower $i18nInterests) }}
-                  {{ $isLanguages := or (eq $fact.kind "languages") (eq $fact.title "Languages") (eq $titleLower $i18nLanguages) }}
-                  {{ if or $isInterests $isLanguages }}
-                    <div class="flex flex-wrap gap-2">
-                      {{ $items := split $fact.value "\n" }}
-                      {{ range $items }}
-                        {{ $item := trim . "- " }}
-                        {{ if $item }}
-                          <span class="inline-flex items-center px-3 py-1.5 text-gray-700 dark:text-text-tertiary text-base font-medium border border-border-primary dark:border-border-primary rounded-xl">
-                            {{ $item | markdownify | safeHTML }}
-                          </span>
-                        {{ end }}
-                      {{ end }}
-                    </div>
-                  {{ else }}
-                    <p class="text-gray-700 dark:text-text-tertiary text-base leading-relaxed">{{ $fact.value | markdownify }}</p>
-                  {{ end }}
-                </div>
-              </div>
+
+        <!-- Education -->
+        <div class="bg-gradient-to-br from-bg-secondary to-bg-tertiary dark:from-bg-secondary dark:to-bg-tertiary p-6 rounded-xl shadow-lg border border-border-primary dark:border-border-primary">
+          <div class="flex items-center mb-4">
+            <i class="fas fa-graduation-cap text-primary dark:text-primary-light text-2xl mr-3"></i>
+            <h3 class="text-xl font-bold text-text-primary dark:text-text-primary">학력</h3>
+          </div>
+          {{ range .Params.quickfacts }}
+            {{ if eq .title "학력" }}
+            <p class="text-base text-text-secondary dark:text-text-secondary leading-relaxed">{{ .value | markdownify }}</p>
             {{ end }}
+          {{ end }}
+        </div>
+
+        <!-- Awards & Key Projects -->
+        <div class="bg-gradient-to-br from-bg-secondary to-bg-tertiary dark:from-bg-secondary dark:to-bg-tertiary p-6 rounded-xl shadow-lg border border-border-primary dark:border-border-primary">
+          <div class="flex items-center mb-4">
+            <i class="fas fa-trophy text-primary dark:text-primary-light text-2xl mr-3"></i>
+            <h3 class="text-xl font-bold text-text-primary dark:text-text-primary">주요 수상 및 프로젝트</h3>
+          </div>
+          <div class="space-y-3">
+            {{ range .Params.quickfacts }}
+              {{ if eq .title "주요 수상" }}
+              <div class="text-base text-text-secondary dark:text-text-secondary leading-relaxed">
+                {{ .value | markdownify }}
+              </div>
+              {{ end }}
+            {{ end }}
+
+            <!-- Key Achievements from Experience -->
+            {{ range first 1 $experiencePage.Params.positions }}
+            <div class="mt-4 pt-4 border-t border-border-primary dark:border-border-primary">
+              <h4 class="text-sm font-semibold text-text-primary dark:text-text-primary mb-2 flex items-center">
+                <i class="fas fa-star text-second mr-2"></i>주요 프로젝트
+              </h4>
+              <ul class="space-y-2">
+                {{ range first 5 .bullet_points }}
+                <li class="flex items-start text-sm text-gray-700 dark:text-text-tertiary">
+                  <i class="fas fa-check-circle text-second mr-2 mt-1 flex-shrink-0 text-xs"></i>
+                  <span>{{ . }}</span>
+                </li>
+                {{ end }}
+              </ul>
+            </div>
+            {{ end }}
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Right Column: Certifications, Skills, Interests -->
+      <div class="space-y-6">
+
+        <!-- Certifications -->
+        <div class="bg-gradient-to-br from-bg-secondary to-bg-tertiary dark:from-bg-secondary dark:to-bg-tertiary p-6 rounded-xl shadow-lg border border-border-primary dark:border-border-primary">
+          <div class="flex items-center mb-4">
+            <i class="fas fa-certificate text-primary dark:text-primary-light text-2xl mr-3"></i>
+            <h3 class="text-xl font-bold text-text-primary dark:text-text-primary">주요 자격증</h3>
+          </div>
+          {{ range .Params.quickfacts }}
+            {{ if eq .title "주요 자격증" }}
+            <div class="text-base text-text-secondary dark:text-text-secondary">
+              {{ .value | markdownify }}
+            </div>
+            {{ end }}
+          {{ end }}
+        </div>
+
+        <!-- Core Skills -->
+        <div class="bg-gradient-to-br from-bg-secondary to-bg-tertiary dark:from-bg-secondary dark:to-bg-tertiary p-6 rounded-xl shadow-lg border border-border-primary dark:border-border-primary">
+          <div class="flex items-center mb-4">
+            <i class="fas fa-code text-primary dark:text-primary-light text-2xl mr-3"></i>
+            <h3 class="text-xl font-bold text-text-primary dark:text-text-primary">핵심 기술</h3>
+          </div>
+          {{ range .Params.quickfacts }}
+            {{ if eq .title "핵심 기술" }}
+            <div class="text-base text-text-secondary dark:text-text-secondary">
+              {{ .value | markdownify }}
+            </div>
+            {{ end }}
+          {{ end }}
+        </div>
+
+        <!-- Interests -->
+        <div class="bg-gradient-to-br from-bg-secondary to-bg-tertiary dark:from-bg-secondary dark:to-bg-tertiary p-6 rounded-xl shadow-lg border border-border-primary dark:border-border-primary">
+          <div class="flex items-center mb-4">
+            <i class="fas fa-heart text-primary dark:text-primary-light text-2xl mr-3"></i>
+            <h3 class="text-xl font-bold text-text-primary dark:text-text-primary">관심사</h3>
+          </div>
+          {{ range .Params.quickfacts }}
+            {{ if eq .title "관심사" }}
+            <div class="text-base text-text-secondary dark:text-text-secondary">
+              {{ .value | markdownify }}
+            </div>
+            {{ end }}
+          {{ end }}
+        </div>
+
+      </div>
+      {{ end }}
+    </div>
+
+    <!-- Bottom Section: Logo + Buttons -->
+    <div class="bg-gradient-to-br from-bg-secondary to-bg-tertiary dark:from-bg-secondary dark:to-bg-tertiary p-8 rounded-xl shadow-lg border border-border-primary dark:border-border-primary">
+      <div class="flex flex-col items-center space-y-6">
+
+        <!-- Logo -->
+        <img
+          src="/images/seolcoding_logo.png"
+          alt="설코딩 로고"
+          class="max-w-xs w-full h-auto"
+          loading="lazy"
+        >
+
+        <!-- Buttons -->
+        <div class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto justify-center">
+          <!-- Contact Button -->
+          <a href="#contact" class="inline-flex items-center justify-center bg-gradient-primary text-white px-6 py-3 rounded-lg shadow-lg about-button button-hover">
+            <i class="fas fa-envelope mr-3 text-lg"></i>
+            {{ i18n "getInTouch" }}
+          </a>
+
+          <!-- Resume Download Button -->
+          {{ if eq .Site.Language.Lang "ko" }}
+          <a href="{{ .Site.Params.resume_url_ko }}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center bg-gradient-primary text-white px-6 py-3 rounded-lg shadow-lg button-hover">
+            <i class="fas fa-file-pdf mr-3 text-lg"></i>
+            {{ i18n "downloadResume" }}
+          </a>
           {{ end }}
         </div>
       </div>
     </div>
 
-  <!-- About Modal -->
-  {{ with .Site.GetPage "about" }}
-  <div id="aboutModal" class="fixed inset-0 bg-bg bg-opacity-50 z-50 hidden items-center justify-center px-4 py-16">
-    <div class="bg-bg dark:bg-bg rounded-xl shadow-2xl w-full max-w-5xl lg:max-w-6xl max-h-[70vh] lg:max-h-[80vh] overflow-y-auto sidebar-scroll">
-      <div class="p-8">
-        <div class="flex justify-between items-center mb-6">
-          <h3 class="text-2xl font-bold text-text-primary dark:text-text-primary">{{ i18n "aboutName" }} {{ .Site.Params.name }}</h3>
-          <button id="closeAboutModal" class="text-text-muted text-text-secondary dark:text-text-muted text-2xl font-bold">
-            <i class="fas fa-times"></i>
-          </button>
-        </div>
-
-        <div class="space-y-6 text-text-secondary dark:text-text-secondary">
-          <p class="text-lg leading-relaxed">{{ .Params.intro | markdownify }}</p>
-          <p class="text-lg leading-relaxed">{{ .Params.study | markdownify }}</p>
-
-          <div class="bg-gradient-primary-lighter p-6 rounded-xl border border-primary-light">
-            <h4 class="text-xl font-semibold mb-3 text-primary-dark flex items-center">
-              <i class="fas fa-heart mr-3 text-second"></i>
-              {{ .Params.passion_title }}
-            </h4>
-            <p class="text-primary-dark leading-relaxed">{{ .Params.passion_text | markdownify }}</p>
-          </div>
-
-          <p class="text-lg leading-relaxed">{{ .Params.mix | markdownify }}</p>
-          <p class="text-lg leading-relaxed">{{ .Params.personal | markdownify }}</p>
-        </div>
-      </div>
-    </div>
   </div>
-  {{ end }}
 </section>
-
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  const modal = document.getElementById('aboutModal');
-  const modalBtn = document.getElementById('aboutModalBtn');
-  const closeBtn = document.getElementById('closeAboutModal');
-
-  // Open modal
-  modalBtn.addEventListener('click', function() {
-    modal.classList.remove('hidden');
-    modal.classList.add('flex');
-    document.body.style.overflow = 'hidden';
-  });
-
-  // Close modal
-  function closeModal() {
-    modal.classList.add('hidden');
-    modal.classList.remove('flex');
-    document.body.style.overflow = 'auto';
-  }
-
-  closeBtn.addEventListener('click', closeModal);
-
-  // Close modal when clicking outside
-  modal.addEventListener('click', function(e) {
-    if (e.target === modal) {
-      closeModal();
-    }
-  });
-
-  // Close modal with Escape key
-  document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
-      closeModal();
-    }
-  });
-});
-</script>
-
